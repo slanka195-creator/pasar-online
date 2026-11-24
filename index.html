@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Pasar Desa Online - Multi Lapak Warga</title>
+    <title>PASAR ONLINE BOAWAE - Lapak Bersama Warga</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Inter -->
@@ -16,7 +16,7 @@
             -webkit-tap-highlight-color: transparent;
             background-color: #f4f1ea;
         }
-        /* Menyembunyikan scrollbar pada filter horizontal */
+        /* Menyembunyikan scrollbar horizontal */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -24,7 +24,7 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
-        /* Tombol sentuh ramah Android minimal 44px */
+        /* Tombol ramah sentuh layar Android minimal 44px */
         .touch-target {
             min-height: 44px;
             min-width: 44px;
@@ -51,43 +51,43 @@
     <div id="app-container" class="max-w-md mx-auto min-h-screen bg-[#faf8f3] shadow-2xl relative flex flex-col pb-28">
 
         <!-- ========================================================= -->
-        <!-- HEADER & NAVIGASI DROPDOWN POJOK KANAN ATAS               -->
+        <!-- HEADER & MENU NAVIGASI POJOK KANAN ATAS                   -->
         <!-- ========================================================= -->
-        <header class="sticky top-0 z-30 bg-emerald-700 text-white shadow-md rounded-b-2xl">
+        <header class="sticky top-0 z-30 bg-emerald-800 text-white shadow-md rounded-b-2xl">
             <div class="px-4 py-3 flex items-center justify-between">
-                <!-- Identitas Pasar Desa -->
-                <div class="flex items-center space-x-2.5 cursor-pointer pr-2" onclick="switchView('home')">
+                <!-- Identitas PASAR ONLINE BOAWAE -->
+                <div class="flex items-center space-x-2.5 cursor-pointer pr-2 min-w-0" onclick="switchView('home')">
                     <div class="bg-amber-400/20 border border-amber-300/30 p-2.5 rounded-xl backdrop-blur-sm shrink-0">
                         <i data-lucide="store" class="w-6 h-6 text-amber-300"></i>
                     </div>
                     <div class="min-w-0">
-                        <h1 id="header-store-name" class="font-extrabold text-base sm:text-lg leading-tight truncate">Pasar Desa Makmur</h1>
-                        <p id="header-store-tagline" class="text-[11px] text-emerald-100 truncate">Lapak Bersama Warga & UMKM Desa</p>
+                        <h1 id="header-store-name" class="font-extrabold text-sm sm:text-base tracking-tight leading-tight truncate">PASAR ONLINE BOAWAE</h1>
+                        <p id="header-store-tagline" class="text-[11px] text-emerald-100 truncate">Belanja & Jualan Warga • Bayar Tunai / Cash</p>
                     </div>
                 </div>
 
-                <!-- Ikon Home & Tombol Menu Dropdown -->
+                <!-- Tombol Home & Menu Dropdown -->
                 <div class="flex items-center space-x-1.5 relative shrink-0">
                     <button onclick="switchView('home')" title="Katalog Utama"
-                        class="touch-target p-2.5 rounded-xl bg-emerald-800/70 hover:bg-emerald-800 active:scale-95 transition flex items-center justify-center">
+                        class="touch-target p-2.5 rounded-xl bg-emerald-900/70 hover:bg-emerald-900 active:scale-95 transition flex items-center justify-center">
                         <i data-lucide="home" class="w-5 h-5"></i>
                     </button>
 
                     <button onclick="toggleNavDropdown(event)" id="btn-nav-menu" title="Menu Navigasi"
-                        class="touch-target px-3 py-2.5 rounded-xl bg-amber-400 text-emerald-950 font-bold text-xs hover:bg-amber-300 active:scale-95 transition flex items-center space-x-1 shadow-sm">
+                        class="touch-target px-3 py-2.5 rounded-xl bg-amber-400 text-emerald-950 font-extrabold text-xs hover:bg-amber-300 active:scale-95 transition flex items-center space-x-1 shadow-sm">
                         <i data-lucide="menu" class="w-5 h-5"></i>
                         <span>Menu</span>
                     </button>
 
-                    <!-- Dropdown Navigasi -->
-                    <div id="nav-dropdown" class="hidden absolute right-0 top-14 w-60 bg-white text-slate-800 rounded-2xl shadow-xl border border-slate-200/80 py-2 z-50 animate-fade-in">
+                    <!-- Dropdown Menu -->
+                    <div id="nav-dropdown" class="hidden absolute right-0 top-14 w-64 bg-white text-slate-800 rounded-2xl shadow-xl border border-slate-200/80 py-2 z-50 animate-fade-in">
                         <button onclick="navigateFromMenu('home')" class="w-full px-4 py-3 text-left text-xs font-bold flex items-center space-x-3 hover:bg-emerald-50 text-slate-700">
                             <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
                                 <i data-lucide="shopping-bag" class="w-4 h-4"></i>
                             </div>
                             <div>
-                                <span class="block text-slate-800">Katalog Utama</span>
-                                <span class="text-[10px] font-normal text-slate-500">Belanja produk warga desa</span>
+                                <span class="block text-slate-800">Katalog Belanja</span>
+                                <span class="text-[10px] font-normal text-slate-500">Lihat dagangan warga Boawae</span>
                             </div>
                         </button>
                         <div class="border-t border-slate-100 my-1"></div>
@@ -97,7 +97,7 @@
                             </div>
                             <div>
                                 <span class="block text-slate-800">Buka Lapak / Jualan</span>
-                                <span class="text-[10px] font-normal text-slate-500">Daftar atau kelola daganganmu</span>
+                                <span class="text-[10px] font-normal text-slate-500">Daftar lapak & unggah foto produk</span>
                             </div>
                         </button>
                         <div class="border-t border-slate-100 my-1"></div>
@@ -106,19 +106,19 @@
                                 <i data-lucide="shield-check" class="w-4 h-4"></i>
                             </div>
                             <div>
-                                <span class="block text-slate-800">Pengaturan Admin</span>
-                                <span class="text-[10px] font-normal text-slate-500">Moderasi & gabung data desa</span>
+                                <span class="block text-slate-800">Panel Admin Boawae</span>
+                                <span class="text-[10px] font-normal text-slate-500">Moderasi, impor/ekspor & update HTML</span>
                             </div>
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- KOLOM PENCARIAN CEPAT (Hanya tampil di Katalog Utama) -->
+            <!-- KOLOM PENCARIAN CEPAT -->
             <div id="search-bar-container" class="px-4 pb-3.5">
                 <div class="relative">
                     <input type="text" id="search-input" oninput="handleSearch()"
-                        placeholder="Cari produk (beras, sayur) atau nama lapak..."
+                        placeholder="Cari produk (beras, sayur, kue) atau lapak..."
                         class="w-full h-11 pl-10 pr-10 rounded-xl bg-white text-slate-800 placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 shadow-inner">
                     <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5"></i>
                     <button id="clear-search-btn" onclick="clearSearch()" class="hidden touch-target absolute right-1 top-0 text-slate-400 hover:text-slate-600 flex items-center justify-center">
@@ -141,11 +141,13 @@
         <!-- ========================================================= -->
         <main id="view-home" class="flex-1 px-4 pt-4">
 
-            <!-- Banner Ajakan Warga Jualan -->
-            <div class="bg-gradient-to-r from-amber-100/90 via-orange-50 to-amber-100/80 border border-amber-300/70 rounded-2xl p-3.5 mb-4 flex items-center justify-between shadow-xs">
+            <!-- Banner Info Sistem Tunai & Ajakan Buka Lapak -->
+            <div class="bg-gradient-to-r from-amber-100/90 via-orange-50 to-amber-100/80 border border-amber-300/70 rounded-2xl p-3.5 mb-4 flex items-center justify-between shadow-2xs">
                 <div class="pr-2">
-                    <span class="inline-block px-2 py-0.5 bg-emerald-700 text-white text-[10px] font-bold rounded-md uppercase tracking-wider mb-1">Ekonomi Warga Desa</span>
-                    <p class="text-xs text-slate-700 leading-relaxed">Punya hasil kebun, masakan, atau usaha di rumah? Ayo buka lapak gratis di sini!</p>
+                    <div class="flex items-center space-x-1.5 mb-1">
+                        <span class="inline-block px-2 py-0.5 bg-emerald-800 text-white text-[10px] font-bold rounded-md uppercase tracking-wider">💵 Bayar Tunai / Cash</span>
+                    </div>
+                    <p class="text-xs text-slate-700 leading-relaxed">Pesan lewat WhatsApp, bayar tunai saat barang diterima. Warga ingin jualan?</p>
                 </div>
                 <button onclick="switchView('seller')" class="touch-target shrink-0 px-3 py-2 bg-amber-500 hover:bg-amber-600 active:scale-95 text-slate-950 font-extrabold text-xs rounded-xl shadow-xs flex flex-col items-center justify-center">
                     <span>+ Buka</span>
@@ -160,17 +162,17 @@
                 </div>
             </div>
 
-            <!-- FILTER BERDASARKAN NAMA LAPAK / PENJUAL -->
+            <!-- FILTER BERDASARKAN NAMA LAPAK WARGA -->
             <div class="mb-4 flex items-center space-x-2 bg-white p-2 rounded-xl border border-slate-200/80 shadow-2xs">
                 <i data-lucide="store" class="w-4 h-4 text-emerald-700 ml-1.5 shrink-0"></i>
                 <select id="seller-filter-select" onchange="selectSellerFilter()" class="w-full h-9 bg-transparent text-xs font-bold text-slate-700 focus:outline-none">
-                    <option value="ALL">Semua Lapak / Penjual Warga</option>
+                    <option value="ALL">Semua Lapak Warga Boawae</option>
                 </select>
             </div>
 
             <!-- JUDUL & JUMLAH PRODUK -->
             <div class="flex items-center justify-between mb-3">
-                <h2 id="catalog-title" class="font-extrabold text-slate-800 text-sm sm:text-base">Katalog Produk Desa</h2>
+                <h2 id="catalog-title" class="font-extrabold text-slate-800 text-sm sm:text-base">Katalog Produk Warga</h2>
                 <span id="product-count" class="text-xs font-bold text-emerald-800 bg-emerald-100 px-2.5 py-1 rounded-full">0 produk</span>
             </div>
 
@@ -191,13 +193,13 @@
         </main>
 
         <!-- ========================================================= -->
-        <!-- HALAMAN 2: BUKA LAPAK / WARGA JUALAN (SELF-SERVICE)       -->
+        <!-- HALAMAN 2: BUKA LAPAK / KELOLA LAPAK WARGA                -->
         <!-- ========================================================= -->
         <section id="view-seller" class="hidden flex-1 px-4 pt-4 pb-8">
             <div class="flex items-center justify-between mb-4">
                 <div>
-                    <h2 class="font-extrabold text-lg text-slate-800">Lapak Warga Desa</h2>
-                    <p class="text-xs text-slate-500">Kelola dagangan mandiri dengan PIN pribadi</p>
+                    <h2 class="font-extrabold text-lg text-slate-800">Lapak Warga Boawae</h2>
+                    <p class="text-xs text-slate-500">Jualan mandiri dengan PIN pribadi 4 angka</p>
                 </div>
                 <button onclick="switchView('home')" class="touch-target px-3.5 py-2 bg-white border border-slate-200 text-slate-700 rounded-xl text-xs font-bold flex items-center space-x-1 shadow-2xs">
                     <i data-lucide="arrow-left" class="w-4 h-4"></i>
@@ -205,7 +207,7 @@
                 </button>
             </div>
 
-            <!-- BAGIAN A: PORTAL PILIH LAPAK ATAU DAFTAR LAPAK BARU (Jika belum login lapak) -->
+            <!-- BAGIAN A: PORTAL MASUK LAPAK ATAU DAFTAR LAPAK BARU -->
             <div id="seller-auth-portal" class="space-y-4">
                 <!-- Tab Daftar Baru vs Masuk Lapak Saya -->
                 <div class="grid grid-cols-2 gap-2 bg-amber-100/70 p-1.5 rounded-2xl border border-amber-200">
@@ -213,7 +215,7 @@
                         Masuk Lapak Saya
                     </button>
                     <button onclick="switchSellerPortalTab('register')" id="btn-portal-register" class="touch-target py-2.5 rounded-xl text-slate-700 font-bold text-xs hover:bg-white/50 transition">
-                        + Daftar Lapak Baru
+                        + Buka Lapak Baru
                     </button>
                 </div>
 
@@ -225,14 +227,14 @@
                         </div>
                         <div>
                             <h3 class="font-bold text-sm text-slate-800">Kelola Lapak Terdaftar</h3>
-                            <p class="text-[11px] text-slate-500">Pilih nama lapak Anda & masukkan PIN 4 digit</p>
+                            <p class="text-[11px] text-slate-500">Pilih nama lapak & masukkan PIN 4 digit</p>
                         </div>
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1.5">Pilih Lapak Anda</label>
                         <select id="login-seller-select" class="w-full h-12 px-3.5 rounded-xl border border-slate-300 text-sm font-semibold bg-white focus:outline-none focus:border-emerald-600">
-                            <!-- Diisi daftar lapak via JS -->
+                            <!-- Diisi via JS -->
                         </select>
                     </div>
 
@@ -241,56 +243,123 @@
                         <input type="password" id="login-seller-pin" inputmode="numeric" maxlength="4" placeholder="••••"
                             onkeyup="if(event.key === 'Enter') loginSeller()"
                             class="w-full h-12 text-center text-xl tracking-[0.5em] font-extrabold rounded-xl border border-slate-300 focus:outline-none focus:border-emerald-600">
-                        <p class="text-[11px] text-slate-400 mt-1.5">Info contoh data awal: PIN Lapak Bu Ani = <b>1111</b>, PIN Pak Slamet = <b>2222</b></p>
+                        <p class="text-[11px] text-slate-400 mt-1.5">Contoh PIN lapak bawaan: Mama Maria = <b>1111</b>, Bapa Yosef = <b>2222</b></p>
                     </div>
 
                     <button onclick="loginSeller()" class="w-full touch-target py-3.5 bg-emerald-700 hover:bg-emerald-800 active:scale-[0.99] text-white font-extrabold text-sm rounded-2xl shadow-md transition">
-                        Buka Dashboard Lapak Saya
+                        Masuk ke Lapak Saya
                     </button>
                 </div>
 
-                <!-- FORM PENDAFTARAN LAPAK BARU -->
-                <form id="portal-panel-register" onsubmit="registerNewSeller(event)" class="hidden bg-white p-5 rounded-3xl shadow-sm border border-slate-200/80 space-y-3.5">
+                <!-- FORM BUKA LAPAK BARU (SEKALI LANGKAH BISA LANGSUNG UPLOAD FOTO PRODUK PERTAMA) -->
+                <form id="portal-panel-register" onsubmit="registerNewSeller(event)" class="hidden bg-white p-5 rounded-3xl shadow-sm border border-slate-200/80 space-y-4">
                     <div class="flex items-center space-x-3 pb-2 border-b border-slate-100">
                         <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center shrink-0">
                             <i data-lucide="store" class="w-5 h-5"></i>
                         </div>
                         <div>
                             <h3 class="font-bold text-sm text-slate-800">Daftar Lapak Warga Baru</h3>
-                            <p class="text-[11px] text-slate-500">Gratis & langsung bisa pasang produk dagangan</p>
+                            <p class="text-[11px] text-slate-500">Gratis, terima pesanan WA & bayar tunai</p>
                         </div>
                     </div>
 
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">Nama Lapak / Usaha <span class="text-rose-500">*</span></label>
-                        <input type="text" id="reg-shop-name" required placeholder="Contoh: Warung Sayur Bu Siti"
-                            class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-600">
+                    <!-- Data Identitas Lapak -->
+                    <div class="space-y-3">
+                        <p class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-800">1. Identitas Lapak & Penjual</p>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Nama Lapak / Usaha <span class="text-rose-500">*</span></label>
+                            <input type="text" id="reg-shop-name" required placeholder="Contoh: Kios Sayur Mama Clara"
+                                class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-600">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Nama Pemilik <span class="text-rose-500">*</span></label>
+                            <input type="text" id="reg-owner-name" required placeholder="Contoh: Clara"
+                                class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-600">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Nomor WhatsApp Aktif <span class="text-rose-500">*</span></label>
+                            <input type="tel" id="reg-wa" required placeholder="Contoh: 081234567890"
+                                class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-600">
+                            <p class="text-[10px] text-slate-500 mt-1">Nota pesanan pembeli akan masuk ke nomor WA ini.</p>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Alamat / Kampung / Kelurahan <span class="text-rose-500">*</span></label>
+                            <input type="text" id="reg-location" required placeholder="Contoh: Kel. Natanage / Kampung..."
+                                class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-600">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Buat PIN Lapak (4 Angka) <span class="text-rose-500">*</span></label>
+                            <input type="password" id="reg-pin" required inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="Contoh: 4567"
+                                class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm font-bold tracking-widest focus:outline-none focus:border-emerald-600">
+                        </div>
                     </div>
 
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">Nama Pemilik <span class="text-rose-500">*</span></label>
-                        <input type="text" id="reg-owner-name" required placeholder="Contoh: Siti Aminah"
-                            class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-600">
-                    </div>
+                    <!-- Opsional: Produk Pertama + Upload Foto Langsung -->
+                    <div class="pt-3 border-t border-slate-200 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <p class="text-[11px] font-extrabold uppercase tracking-wider text-amber-800">2. Produk Pertama (Opsional)</p>
+                            <span class="text-[10px] text-slate-400">Bisa diisi nanti</span>
+                        </div>
 
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">Nomor WhatsApp Penjual <span class="text-rose-500">*</span></label>
-                        <input type="tel" id="reg-wa" required placeholder="Contoh: 6281234567890"
-                            class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-600">
-                        <p class="text-[10px] text-slate-500 mt-1">Pesanan pembeli akan masuk langsung ke nomor WA ini.</p>
-                    </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Nama Produk Pertama</label>
+                            <input type="text" id="reg-first-prod-name" placeholder="Contoh: Pisang Kepok Matang"
+                                class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-600">
+                        </div>
 
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">Alamat / Dusun / RT-RW <span class="text-rose-500">*</span></label>
-                        <input type="text" id="reg-location" required placeholder="Contoh: Dusun Krajan RT 02 / RW 01"
-                            class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-600">
-                    </div>
+                        <div class="grid grid-cols-2 gap-2.5">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Harga (Rp)</label>
+                                <input type="number" id="reg-first-prod-price" min="100" step="100" placeholder="15000"
+                                    class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-600">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Satuan</label>
+                                <input type="text" id="reg-first-prod-unit" placeholder="/sisir, /kg"
+                                    class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-600">
+                            </div>
+                        </div>
 
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">Buat PIN Lapak (4 Digit Angka) <span class="text-rose-500">*</span></label>
-                        <input type="password" id="reg-pin" required inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="Contoh: 4567"
-                            class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm font-bold tracking-widest focus:outline-none focus:border-emerald-600">
-                        <p class="text-[10px] text-amber-700 mt-1">Ingat 4 angka PIN ini agar orang lain tidak bisa mengubah dagangan Anda.</p>
+                        <div class="grid grid-cols-2 gap-2.5">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Kategori</label>
+                                <select id="reg-first-prod-cat" class="w-full h-11 px-3 rounded-xl border border-slate-300 text-xs bg-white focus:outline-none focus:border-emerald-600">
+                                    <option value="Hasil Tani">Hasil Tani</option>
+                                    <option value="Sembako">Sembako</option>
+                                    <option value="Makanan/Kuliner">Makanan/Kuliner</option>
+                                    <option value="Kerajinan">Kerajinan</option>
+                                    <option value="Jasa/Lainnya">Jasa/Lainnya</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Ikon Cadangan</label>
+                                <input type="text" id="reg-first-prod-icon" value="🍌" maxlength="4"
+                                    class="w-full h-11 px-3 rounded-xl border border-slate-300 text-lg text-center focus:outline-none focus:border-emerald-600">
+                            </div>
+                        </div>
+
+                        <!-- Upload Foto Produk Pertama -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Foto Produk dari HP / Galeri</label>
+                            <div class="bg-slate-50 border border-dashed border-emerald-400 rounded-2xl p-3">
+                                <div id="reg-photo-preview-box" class="hidden mb-2.5 relative">
+                                    <img id="reg-photo-preview-img" src="" alt="Preview Foto" class="w-full h-36 object-cover rounded-xl border border-slate-200">
+                                    <button type="button" onclick="clearUploadedPhoto('reg')" class="absolute top-2 right-2 bg-rose-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow">
+                                        Hapus Foto
+                                    </button>
+                                </div>
+                                <label class="w-full touch-target py-2.5 px-3 bg-white border border-emerald-300 hover:bg-emerald-50 text-emerald-800 rounded-xl text-xs font-bold flex items-center justify-center space-x-2 cursor-pointer shadow-2xs">
+                                    <i data-lucide="camera" class="w-4 h-4"></i>
+                                    <span>Pilih Foto / Kamera HP</span>
+                                    <input type="file" id="reg-photo-input" accept="image/*" onchange="handlePhotoUpload(event, 'reg')" class="hidden">
+                                </label>
+                                <p class="text-[10px] text-slate-500 text-center mt-1.5">Foto otomatis dikompresi agar ringan di HP warga.</p>
+                            </div>
+                        </div>
                     </div>
 
                     <button type="submit" class="w-full touch-target py-3.5 bg-amber-500 hover:bg-amber-600 active:scale-[0.99] text-slate-950 font-extrabold text-sm rounded-2xl shadow-md transition">
@@ -299,7 +368,7 @@
                 </form>
             </div>
 
-            <!-- BAGIAN B: DASHBOARD "KELOLA LAPAK SAYA" (Setelah PIN Terverifikasi) -->
+            <!-- BAGIAN B: DASHBOARD KELOLA LAPAK SAYA (SETELAH PIN BENAR) -->
             <div id="seller-dashboard" class="hidden space-y-4">
                 <!-- Kartu Info Profil Lapak Aktif -->
                 <div class="bg-emerald-800 text-white p-4 rounded-3xl shadow-md">
@@ -307,8 +376,8 @@
                         <div>
                             <span id="dash-seller-status" class="inline-block px-2 py-0.5 bg-emerald-600 text-emerald-100 text-[10px] font-bold rounded-md mb-1">Lapak Aktif</span>
                             <h3 id="dash-shop-name" class="font-extrabold text-base">Nama Lapak</h3>
-                            <p id="dash-owner-info" class="text-xs text-emerald-200 mt-0.5">Pemilik • RT/RW</p>
-                            <p id="dash-wa-info" class="text-xs text-amber-300 font-semibold mt-1">WA: 628...</p>
+                            <p id="dash-owner-info" class="text-xs text-emerald-200 mt-0.5">Pemilik • Alamat</p>
+                            <p id="dash-wa-info" class="text-xs text-amber-300 font-semibold mt-1">WA: +628...</p>
                         </div>
                         <button onclick="logoutSeller()" class="touch-target px-3 py-2 bg-white/15 hover:bg-white/25 rounded-xl text-xs font-bold flex items-center space-x-1">
                             <i data-lucide="log-out" class="w-4 h-4"></i>
@@ -316,7 +385,7 @@
                         </button>
                     </div>
 
-                    <!-- Aksi Cepat Lapak: Tambah Produk & Ekspor Data ke Admin -->
+                    <!-- Aksi Cepat Lapak -->
                     <div class="grid grid-cols-2 gap-2 mt-4 pt-3 border-t border-emerald-700">
                         <button onclick="openProductModal(null, currentSellerId)" class="touch-target py-2.5 px-3 bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-xs rounded-xl flex items-center justify-center space-x-1.5 shadow-xs">
                             <i data-lucide="plus-circle" class="w-4 h-4"></i>
@@ -329,18 +398,18 @@
                     </div>
                 </div>
 
-                <!-- Petunjuk Sinkronisasi ke Admin Desa -->
+                <!-- Petunjuk Sinkronisasi ke Admin Boawae -->
                 <div class="bg-amber-50 border border-amber-200 p-3 rounded-2xl flex items-start space-x-2.5">
                     <i data-lucide="info" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
                     <p class="text-[11px] text-slate-700 leading-relaxed">
-                        <b>Tips:</b> Setelah menambah produk baru, klik tombol <b>"Ekspor Lapak"</b> lalu kirim filenya ke grup/Admin Desa agar produk Anda muncul di katalog HP warga lainnya.
+                        <b>Info Penjual:</b> Setelah menambah produk & foto, klik <b>"Ekspor Lapak"</b> lalu kirim filenya ke Admin Pasar Online Boawae agar dagangan Anda muncul di semua HP warga.
                     </p>
                 </div>
 
                 <!-- Daftar Produk Milik Lapak Ini -->
                 <div>
                     <div class="flex items-center justify-between mb-2.5">
-                        <h4 class="font-extrabold text-sm text-slate-800">Produk di Lapak Saya (<span id="seller-my-prod-count">0</span>)</h4>
+                        <h4 class="font-extrabold text-sm text-slate-800">Dagangan Saya (<span id="seller-my-prod-count">0</span>)</h4>
                         <button onclick="openEditSellerProfileModal()" class="text-xs font-bold text-emerald-700 hover:underline">Edit Profil Lapak</button>
                     </div>
                     <div id="seller-product-list" class="space-y-2.5">
@@ -351,13 +420,13 @@
         </section>
 
         <!-- ========================================================= -->
-        <!-- HALAMAN 3: PANEL PENGATURAN ADMIN DESA (PIN: 1234)        -->
+        <!-- HALAMAN 3: PANEL PENGATURAN ADMIN (PIN: 1234)             -->
         <!-- ========================================================= -->
         <section id="view-admin" class="hidden flex-1 px-4 pt-4 pb-8">
             <div class="flex items-center justify-between mb-4">
                 <div>
-                    <h2 class="font-extrabold text-lg text-slate-800">Admin Pasar Desa</h2>
-                    <p class="text-xs text-slate-500">Moderasi lapak warga & distribusi data desa</p>
+                    <h2 class="font-extrabold text-lg text-slate-800">Admin Pasar Boawae</h2>
+                    <p class="text-xs text-slate-500">Moderasi lapak, impor/ekspor & distribusi HTML</p>
                 </div>
                 <button onclick="switchView('home')" class="touch-target px-3.5 py-2 bg-white border border-slate-200 text-slate-700 rounded-xl text-xs font-bold flex items-center space-x-1">
                     <i data-lucide="arrow-left" class="w-4 h-4"></i>
@@ -374,11 +443,11 @@
                     Gabung / Bagikan
                 </button>
                 <button onclick="switchAdminTab('store')" id="tab-admin-store" class="touch-target py-2 text-xs font-bold rounded-xl text-slate-600 transition">
-                    Profil Desa
+                    Profil Pasar
                 </button>
             </div>
 
-            <!-- TAB ADMIN 1: MODERASI LAPAK & SELURUH PRODUK WARGA -->
+            <!-- TAB ADMIN 1: MODERASI LAPAK & SELURUH PRODUK -->
             <div id="admin-panel-moderation" class="space-y-4">
                 <!-- Daftar Semua Lapak Warga -->
                 <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-2xs">
@@ -388,7 +457,7 @@
                     </div>
                 </div>
 
-                <!-- Daftar Semua Produk dari Seluruh Lapak -->
+                <!-- Daftar Semua Produk -->
                 <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-2xs">
                     <div class="flex items-center justify-between mb-3">
                         <h3 class="font-extrabold text-xs uppercase tracking-wider text-slate-500">Semua Produk Warga (<span id="admin-all-prod-count">0</span>)</h3>
@@ -402,14 +471,14 @@
 
             <!-- TAB ADMIN 2: GABUNG DATA WARGA & UNDUH FILE HTML TERUPDATE -->
             <div id="admin-panel-sync" class="hidden space-y-4">
-                <!-- Bagikan File HTML Terupdate ke Grup WA Desa -->
+                <!-- Unduh File HTML Terupdate -->
                 <div class="bg-gradient-to-br from-emerald-800 to-emerald-700 text-white p-4 rounded-2xl shadow-md">
                     <div class="flex items-center space-x-2.5 mb-2">
                         <i data-lucide="file-code-2" class="w-5 h-5 text-amber-300"></i>
-                        <h3 class="font-extrabold text-sm">Bagikan Aplikasi Terupdate ke Warga</h3>
+                        <h3 class="font-extrabold text-sm">Unduh Aplikasi HTML Terupdate</h3>
                     </div>
                     <p class="text-xs text-emerald-100 leading-relaxed mb-3.5">
-                        Unduh file <b>HTML tunggal yang sudah berisi seluruh data lapak & produk terbaru</b>, lalu kirimkan langsung ke Grup WhatsApp Desa agar warga tinggal membuka dan berbelanja.
+                        Unduh file <b>HTML tunggal yang sudah memuat seluruh data lapak, produk, dan foto terbaru</b>. Ubah namanya menjadi <code>index.html</code> untuk diunggah ke GitHub Pages atau kirim ke grup WA.
                     </p>
                     <button onclick="downloadUpdatedHTML()" class="w-full touch-target py-3 bg-amber-400 hover:bg-amber-300 active:scale-[0.99] text-slate-950 font-extrabold text-xs rounded-xl shadow flex items-center justify-center space-x-2">
                         <i data-lucide="download" class="w-4 h-4"></i>
@@ -421,23 +490,23 @@
                 <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-2xs space-y-3">
                     <h3 class="font-extrabold text-sm text-slate-800">Gabung Data Lapak Warga (Impor)</h3>
                     <p class="text-xs text-slate-500 leading-relaxed">
-                        Terima file ekspor (<b>.json</b> atau <b>.csv</b>) dari warga yang mendaftar lapak, lalu unggah di sini untuk menggabungkan produk mereka ke katalog desa tanpa menghapus data yang sudah ada.
+                        Unggah file ekspor (<b>.json</b> atau <b>.csv</b>) dari warga yang membuka lapak untuk menggabungkan produk & foto mereka ke katalog utama.
                     </p>
                     <label class="w-full py-4 px-4 border-2 border-dashed border-emerald-400 bg-emerald-50/40 rounded-2xl flex flex-col items-center justify-center cursor-pointer hover:bg-emerald-50 transition">
                         <i data-lucide="folder-plus" class="w-7 h-7 text-emerald-700 mb-1"></i>
                         <span class="text-xs font-extrabold text-emerald-900">Pilih File Lapak Warga (.JSON / .CSV)</span>
-                        <span class="text-[10px] text-slate-500 mt-0.5">Otomatis digabung dengan katalog saat ini</span>
+                        <span class="text-[10px] text-slate-500 mt-0.5">Otomatis digabung tanpa menghapus data lama</span>
                         <input type="file" accept=".json,.csv" onchange="adminMergeImport(event)" class="hidden">
                     </label>
                 </div>
 
                 <!-- Ekspor Database Lengkap & Templat CSV -->
                 <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-2xs space-y-3">
-                    <h3 class="font-extrabold text-sm text-slate-800">Cadangan Database & Templat Excel</h3>
+                    <h3 class="font-extrabold text-sm text-slate-800">Cadangan Database & Templat CSV</h3>
                     <div class="grid grid-cols-2 gap-2.5">
                         <button onclick="exportFullDatabase()" class="touch-target py-2.5 px-3 bg-blue-50 text-blue-800 border border-blue-200 rounded-xl text-xs font-bold flex items-center justify-center space-x-1.5">
                             <i data-lucide="database" class="w-4 h-4"></i>
-                            <span>Backup JSON</span>
+                            <span>Ekspor JSON</span>
                         </button>
                         <button onclick="downloadCSVTemplate()" class="touch-target py-2.5 px-3 bg-slate-100 text-slate-800 border border-slate-300 rounded-xl text-xs font-bold flex items-center justify-center space-x-1.5">
                             <i data-lucide="file-spreadsheet" class="w-4 h-4"></i>
@@ -449,33 +518,33 @@
                 <!-- Reset Data Awal -->
                 <div class="bg-rose-50 p-4 rounded-2xl border border-rose-200">
                     <h3 class="font-bold text-xs text-rose-800 mb-1">Reset ke Data Contoh Awal</h3>
-                    <p class="text-[11px] text-rose-600 mb-3">Kembalikan katalog ke 2 lapak contoh awal (Lapak Bu Ani & Kebun Pak Slamet).</p>
+                    <p class="text-[11px] text-rose-600 mb-3">Kembalikan katalog ke contoh awal bawaan PASAR ONLINE BOAWAE.</p>
                     <button onclick="confirmResetDefault()" class="touch-target px-4 py-2 bg-rose-600 text-white text-xs font-bold rounded-xl">
                         Reset Data Awal
                     </button>
                 </div>
             </div>
 
-            <!-- TAB ADMIN 3: PROFIL PASAR DESA & PIN ADMIN -->
+            <!-- TAB ADMIN 3: PROFIL PASAR & PIN ADMIN -->
             <div id="admin-panel-store" class="hidden bg-white p-4 rounded-2xl border border-slate-200/80 shadow-2xs space-y-4">
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">Nama Pasar Desa</label>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Nama Pasar Online</label>
                     <input type="text" id="setting-store-name" class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-600">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">Subjudul / Tagline Desa</label>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Subjudul / Slogan</label>
                     <input type="text" id="setting-store-tagline" class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-600">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">Nomor WhatsApp Kontak Admin Desa</label>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Nomor WhatsApp Admin Boawae</label>
                     <input type="tel" id="setting-admin-wa" placeholder="6281234567890" class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-600">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">Ubah PIN Admin Desa (Minimal 4 Angka)</label>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Ubah PIN Admin (Minimal 4 Angka)</label>
                     <input type="password" inputmode="numeric" maxlength="6" id="setting-admin-pin" class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-600">
                 </div>
                 <button onclick="saveAdminSettings()" class="w-full touch-target py-3.5 bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold text-sm rounded-xl shadow">
-                    Simpan Pengaturan Desa
+                    Simpan Pengaturan
                 </button>
             </div>
         </section>
@@ -484,7 +553,7 @@
         <!-- TOMBOL KERANJANG BELANJA MENGAMBANG (FLOATING CART)       -->
         <!-- ========================================================= -->
         <div id="floating-cart-bar" class="fixed bottom-4 left-0 right-0 z-30 px-4 max-w-md mx-auto transition-transform duration-300 translate-y-32">
-            <button onclick="openCartDrawer()" class="w-full touch-target bg-emerald-700 hover:bg-emerald-800 active:scale-[0.98] text-white p-3.5 rounded-2xl shadow-xl shadow-emerald-950/25 flex items-center justify-between border border-emerald-500">
+            <button onclick="openCartDrawer()" class="w-full touch-target bg-emerald-800 hover:bg-emerald-900 active:scale-[0.98] text-white p-3.5 rounded-2xl shadow-xl shadow-emerald-950/25 flex items-center justify-between border border-emerald-500">
                 <div class="flex items-center space-x-3">
                     <div class="relative bg-white/20 p-2.5 rounded-xl">
                         <i data-lucide="shopping-basket" class="w-5 h-5 text-amber-300"></i>
@@ -496,7 +565,7 @@
                     </div>
                 </div>
                 <div class="flex items-center space-x-1 bg-amber-400 text-slate-950 px-3.5 py-2 rounded-xl font-extrabold text-xs shadow-xs">
-                    <span>Checkout WA</span>
+                    <span>Pesan WA</span>
                     <i data-lucide="chevron-up" class="w-4 h-4"></i>
                 </div>
             </button>
@@ -514,9 +583,9 @@
                 <div>
                     <h3 class="font-extrabold text-base text-slate-800 flex items-center space-x-2">
                         <i data-lucide="shopping-bag" class="w-5 h-5 text-emerald-700"></i>
-                        <span>Keranjang Belanja Warga</span>
+                        <span>Keranjang Belanja</span>
                     </h3>
-                    <p class="text-[11px] text-slate-500">Dikelompokkan otomatis per lapak penjual</p>
+                    <p class="text-[11px] text-slate-500">Terpisah otomatis per lapak penjual • Bayar Tunai</p>
                 </div>
                 <div class="flex items-center space-x-1.5">
                     <button onclick="clearCart()" class="px-2.5 py-1.5 rounded-lg bg-rose-50 text-rose-600 text-xs font-bold">Kosongkan</button>
@@ -529,20 +598,23 @@
             <!-- Isi Keranjang & Data Pembeli -->
             <div class="p-4 overflow-y-auto space-y-4 flex-1">
                 
-                <!-- Identitas Pembeli (Berlaku untuk semua pesanan) -->
+                <!-- Identitas Pembeli -->
                 <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-2xs space-y-3">
-                    <h4 class="text-xs font-extrabold text-emerald-800 uppercase tracking-wider flex items-center space-x-1.5">
-                        <i data-lucide="user-check" class="w-4 h-4"></i>
-                        <span>Data Pemesan</span>
-                    </h4>
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-xs font-extrabold text-emerald-800 uppercase tracking-wider flex items-center space-x-1.5">
+                            <i data-lucide="user-check" class="w-4 h-4"></i>
+                            <span>Data Pembeli</span>
+                        </h4>
+                        <span class="px-2 py-0.5 bg-amber-100 text-amber-900 text-[10px] font-extrabold rounded-md">💵 Tunai / Cash</span>
+                    </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">Nama Anda <span class="text-rose-500">*</span></label>
-                        <input type="text" id="buyer-name" placeholder="Contoh: Bu Rina / Pak Hendra"
+                        <input type="text" id="buyer-name" placeholder="Contoh: Mama Lusia / Bapa Anton"
                             class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-600">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">Alamat / Dusun / RT-RW <span class="text-rose-500">*</span></label>
-                        <input type="text" id="buyer-address" placeholder="Contoh: Dusun Krajan RT 03 / RW 01"
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Alamat / Kampung / Kelurahan <span class="text-rose-500">*</span></label>
+                        <input type="text" id="buyer-address" placeholder="Contoh: Dekat Pasar Boawae / Kel. Natanage"
                             class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-600">
                     </div>
                 </div>
@@ -557,7 +629,7 @@
     </div>
 
     <!-- ========================================================= -->
-    <!-- MODAL DETAIL PRODUK (INFO LENGKAP & PROFIL LAPAK)         -->
+    <!-- MODAL DETAIL PRODUK                                       -->
     <!-- ========================================================= -->
     <div id="product-detail-modal" class="fixed inset-0 z-50 hidden bg-slate-900/65 backdrop-blur-xs flex items-end sm:items-center justify-center">
         <div class="bg-white w-full max-w-md rounded-t-3xl sm:rounded-3xl p-5 max-h-[90vh] overflow-y-auto animate-slide-up shadow-2xl">
@@ -568,7 +640,7 @@
                 </button>
             </div>
 
-            <div id="detail-media-box" class="w-full h-44 bg-gradient-to-br from-emerald-50 to-amber-50 rounded-2xl flex items-center justify-center text-6xl mb-4 overflow-hidden">
+            <div id="detail-media-box" class="w-full h-52 bg-gradient-to-br from-emerald-50 to-amber-50 rounded-2xl flex items-center justify-center text-6xl mb-4 overflow-hidden border border-slate-100">
                 🌾
             </div>
 
@@ -576,10 +648,11 @@
             <div class="flex items-baseline space-x-1.5 mb-3">
                 <span id="detail-prod-price" class="font-extrabold text-xl text-emerald-700">Rp 0</span>
                 <span id="detail-prod-unit" class="text-xs text-slate-500 font-semibold">/kg</span>
+                <span class="ml-auto text-[11px] font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded-md">💵 Bayar Tunai</span>
             </div>
 
             <p id="detail-prod-desc" class="text-xs text-slate-600 leading-relaxed bg-slate-50 p-3 rounded-xl border border-slate-100 mb-4">
-                Deskripsi produk warga desa.
+                Deskripsi produk warga.
             </p>
 
             <!-- Info Penjual / Lapak -->
@@ -587,7 +660,7 @@
                 <div>
                     <p class="text-[10px] font-bold text-amber-800 uppercase tracking-wider">Dijual Oleh Lapak</p>
                     <p id="detail-seller-name" class="font-extrabold text-sm text-slate-800">Nama Lapak</p>
-                    <p id="detail-seller-loc" class="text-xs text-slate-600 mt-0.5">📍 Dusun / RT-RW</p>
+                    <p id="detail-seller-loc" class="text-xs text-slate-600 mt-0.5">📍 Alamat Lapak</p>
                 </div>
                 <button id="detail-filter-seller-btn" class="px-3 py-2 bg-white border border-amber-300 text-amber-900 rounded-xl text-xs font-bold shadow-2xs">
                     Lihat Lapak
@@ -595,21 +668,21 @@
             </div>
 
             <div id="detail-action-area">
-                <!-- Tombol tambah ke keranjang dirender via JS -->
+                <!-- Tombol tambah ke keranjang -->
             </div>
         </div>
     </div>
 
     <!-- ========================================================= -->
-    <!-- MODAL LOGIN PIN ADMIN DESA                                -->
+    <!-- MODAL LOGIN PIN ADMIN                                     -->
     <!-- ========================================================= -->
     <div id="pin-modal" class="fixed inset-0 z-50 hidden bg-slate-900/65 backdrop-blur-xs flex items-center justify-center p-4">
         <div class="bg-white w-full max-w-xs rounded-3xl p-6 shadow-2xl text-center animate-fade-in">
             <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center mx-auto mb-3">
                 <i data-lucide="shield-check" class="w-6 h-6"></i>
             </div>
-            <h3 class="font-extrabold text-lg text-slate-800 mb-1">Akses Admin Desa</h3>
-            <p class="text-xs text-slate-500 mb-4">Masukkan PIN Pengurus Pasar Desa.<br><span class="text-emerald-700 font-bold">(PIN Default: 1234)</span></p>
+            <h3 class="font-extrabold text-lg text-slate-800 mb-1">Akses Admin Boawae</h3>
+            <p class="text-xs text-slate-500 mb-4">Masukkan PIN Pengelola.<br><span class="text-emerald-700 font-bold">(PIN Default: 1234)</span></p>
             
             <input type="password" id="admin-pin-input" inputmode="numeric" maxlength="6" placeholder="••••"
                 onkeyup="if(event.key === 'Enter') verifyAdminPin()"
@@ -624,7 +697,7 @@
     </div>
 
     <!-- ========================================================= -->
-    <!-- MODAL TAMBAH / EDIT PRODUK (PENJUAL & ADMIN)              -->
+    <!-- MODAL TAMBAH / EDIT PRODUK + UPLOAD FOTO DARI HP          -->
     <!-- ========================================================= -->
     <div id="product-form-modal" class="fixed inset-0 z-50 hidden bg-slate-900/65 backdrop-blur-xs flex items-end sm:items-center justify-center">
         <div class="bg-white w-full max-w-md rounded-t-3xl sm:rounded-3xl p-5 max-h-[92vh] overflow-y-auto animate-slide-up shadow-2xl">
@@ -645,9 +718,28 @@
                     </select>
                 </div>
 
+                <!-- Upload Foto Produk dari Galeri / Kamera HP -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Foto Produk (Galeri / Kamera HP)</label>
+                    <div class="bg-slate-50 border border-dashed border-emerald-400 rounded-2xl p-3">
+                        <div id="modal-photo-preview-box" class="hidden mb-2.5 relative">
+                            <img id="modal-photo-preview-img" src="" alt="Preview Foto Produk" class="w-full h-40 object-cover rounded-xl border border-slate-200">
+                            <button type="button" onclick="clearUploadedPhoto('modal')" class="absolute top-2 right-2 bg-rose-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow">
+                                Hapus Foto
+                            </button>
+                        </div>
+                        <label class="w-full touch-target py-2.5 px-3 bg-white border border-emerald-300 hover:bg-emerald-50 text-emerald-800 rounded-xl text-xs font-bold flex items-center justify-center space-x-2 cursor-pointer shadow-2xs">
+                            <i data-lucide="camera" class="w-4 h-4"></i>
+                            <span>Unggah Foto Produk dari HP</span>
+                            <input type="file" id="modal-photo-input" accept="image/*" onchange="handlePhotoUpload(event, 'modal')" class="hidden">
+                        </label>
+                        <p class="text-[10px] text-slate-500 text-center mt-1.5">Foto otomatis dikompresi agar hemat memori & cepat dibuka.</p>
+                    </div>
+                </div>
+
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Nama Produk <span class="text-rose-500">*</span></label>
-                    <input type="text" id="prod-name" required placeholder="Contoh: Beras Pandan Wangi Asli"
+                    <input type="text" id="prod-name" required placeholder="Contoh: Beras Merah Lokal Boawae"
                         class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-600">
                 </div>
 
@@ -663,7 +755,7 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">Ikon / Emoji</label>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Ikon Cadangan</label>
                         <input type="text" id="prod-icon" value="🌾" maxlength="4" placeholder="🌾"
                             class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-lg text-center focus:outline-none focus:border-emerald-600">
                     </div>
@@ -671,8 +763,8 @@
 
                 <div class="grid grid-cols-2 gap-3">
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">Harga (Rp) <span class="text-rose-500">*</span></label>
-                        <input type="number" id="prod-price" required min="100" step="100" placeholder="14000"
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Harga Tunai (Rp) <span class="text-rose-500">*</span></label>
+                        <input type="number" id="prod-price" required min="100" step="100" placeholder="15000"
                             class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-600">
                     </div>
                     <div>
@@ -693,14 +785,8 @@
 
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Keterangan Singkat Produk</label>
-                    <textarea id="prod-desc" rows="2" placeholder="Contoh: Dipetik pagi ini langsung dari kebun, segar tanpa pestisida."
+                    <textarea id="prod-desc" rows="2" placeholder="Contoh: Segar baru dipetik pagi ini, siap antar sekitar Boawae."
                         class="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-600"></textarea>
-                </div>
-
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">Link Foto Produk (Opsional)</label>
-                    <input type="url" id="prod-image" placeholder="https://... (Kosongkan jika pakai Emoji)"
-                        class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-emerald-600">
                 </div>
 
                 <div class="pt-2 flex space-x-2.5">
@@ -736,7 +822,7 @@
                     <input type="tel" id="edit-wa" required class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">Alamat / RT-RW</label>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Alamat / Kampung / Kelurahan</label>
                     <input type="text" id="edit-location" required class="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm">
                 </div>
                 <div>
@@ -769,38 +855,38 @@
     </div>
 
     <!-- ========================================================= -->
-    <!-- SCRIPT LOGIKA MULTI-LAPAK PASAR DESA                      -->
+    <!-- SCRIPT LOGIKA PASAR ONLINE BOAWAE                         -->
     <!-- ========================================================= -->
     <script id="embedded-database-script">
-        // DATA AWAL (Akan otomatis diperbarui jika Admin mengunduh file HTML terupdate)
+        // DATA TERTANAM (Otomatis diperbarui jika Admin mengunduh file HTML terupdate)
         const EMBEDDED_DATA = null;
     </script>
 
     <script>
-        // --- 1. DATA CONTOH BAWAAN (2 LAPAK WARGA & 6 PRODUK) ---
+        // --- 1. DATA CONTOH BAWAAN PASAR ONLINE BOAWAE ---
         const DEFAULT_SETTINGS = {
-            storeName: "Pasar Desa Makmur",
-            storeTagline: "Lapak Bersama Warga & UMKM Desa",
+            storeName: "PASAR ONLINE BOAWAE",
+            storeTagline: "Belanja & Jualan Warga • Bayar Tunai / Cash",
             adminWa: "6281234567890",
             adminPin: "1234"
         };
 
         const DEFAULT_SELLERS = [
             {
-                id: "lapak_bu_ani",
-                shopName: "Dapur & Keripik Bu Ani",
-                ownerName: "Ibu Ani Suryani",
+                id: "lapak_mama_maria",
+                shopName: "Dapur & Kue Mama Maria",
+                ownerName: "Mama Maria",
                 waNumber: "6281234567801",
-                location: "Dusun Krajan RT 02 / RW 01",
+                location: "Kel. Natanage, Boawae",
                 pin: "1111",
-                status: "active" // active | suspended
+                status: "active"
             },
             {
-                id: "lapak_pak_slamet",
-                shopName: "Kebun Segar Pak Slamet",
-                ownerName: "Bapak Slamet Riyadi",
+                id: "lapak_bapa_yosef",
+                shopName: "Hasil Kebun Bapa Yosef",
+                ownerName: "Bapa Yosef",
                 waNumber: "6281234567802",
-                location: "Dusun Sawah Indah RT 04 / RW 02",
+                location: "Dekat Pasar Boawae",
                 pin: "2222",
                 status: "active"
             }
@@ -809,74 +895,74 @@
         const DEFAULT_PRODUCTS = [
             {
                 id: 101,
-                sellerId: "lapak_pak_slamet",
-                name: "Beras Pandan Wangi Panen Desa",
+                sellerId: "lapak_bapa_yosef",
+                name: "Beras Lokal Boawae Pulen",
                 category: "Sembako",
-                price: 14500,
+                price: 14000,
                 unit: "/kg",
                 stock: "Tersedia",
                 icon: "🌾",
-                desc: "Beras pulen wangi alami hasil panen sawah desa sendiri, bersih tanpa pemutih.",
+                desc: "Beras giling baru hasil panen petani Boawae, bersih dan pulen.",
                 image: ""
             },
             {
                 id: 102,
-                sellerId: "lapak_pak_slamet",
-                name: "Sayur Bayam & Kangkung Petik Pagi",
+                sellerId: "lapak_bapa_yosef",
+                name: "Sayur Sawi & Kangkung Segar",
                 category: "Hasil Tani",
                 price: 3000,
                 unit: "/ikat",
                 stock: "Tersedia",
                 icon: "🥬",
-                desc: "Dipetik setiap pukul 05.30 pagi, segar dan bebas pestisida kimia.",
+                desc: "Dipetik pagi hari langsung dari kebun, segar dan sehat.",
                 image: ""
             },
             {
                 id: 103,
-                sellerId: "lapak_pak_slamet",
-                name: "Cabai Rawit Merah Segar",
+                sellerId: "lapak_bapa_yosef",
+                name: "Cabai Rawit Merah Kebun",
                 category: "Hasil Tani",
-                price: 12000,
+                price: 10000,
                 unit: "/250gr",
                 stock: "Terbatas",
                 icon: "🌶️",
-                desc: "Cabai rawit pedas mantap baru dipetik dari kebun pekarangan.",
+                desc: "Cabai rawit pedas segar baru dipetik.",
                 image: ""
             },
             {
                 id: 104,
-                sellerId: "lapak_bu_ani",
-                name: "Keripik Singkong Balado Renyah",
+                sellerId: "lapak_mama_maria",
+                name: "Kue Cucur & Pisang Goreng Hangat",
                 category: "Makanan/Kuliner",
                 price: 10000,
-                unit: "/bungkus",
+                unit: "/mika",
                 stock: "Tersedia",
-                icon: "🥔",
-                desc: "Olahan singkong pilihan warga dengan bumbu balado manis pedas gurih.",
+                icon: "🍩",
+                desc: "Gorengan dan kue tradisional hangat cocok untuk teman kopi pagi.",
                 image: ""
             },
             {
                 id: 105,
-                sellerId: "lapak_bu_ani",
-                name: "Nasi Pecel Pincuk Daun Jati",
-                category: "Makanan/Kuliner",
-                price: 8000,
-                unit: "/porsi",
+                sellerId: "lapak_mama_maria",
+                name: "Kopi Bubuk Asli Flores Sangrai",
+                category: "Sembako",
+                price: 25000,
+                unit: "/bungkus",
                 stock: "Tersedia",
-                icon: "🍛",
-                desc: "Sarapan khas desa lengkap dengan peyek kacang renyah dan sambal kacang sangrai.",
+                icon: "☕",
+                desc: "Kopi pilihan disangrai tradisional dengan aroma khas.",
                 image: ""
             },
             {
                 id: 106,
-                sellerId: "lapak_bu_ani",
-                name: "Anyaman Bambu Tudung Saji",
+                sellerId: "lapak_mama_maria",
+                name: "Anyaman Daun Pandan / Nyiru",
                 category: "Kerajinan",
                 price: 35000,
                 unit: "/pcs",
                 stock: "Tersedia",
                 icon: "🧺",
-                desc: "Kerajinan tangan anyaman bambu halus dan kuat buatan ibu-ibu PKK.",
+                desc: "Kerajinan anyaman tangan kuat dan rapi buatan warga lokal.",
                 image: ""
             }
         ];
@@ -891,28 +977,30 @@
         let activeCategory = "Semua";
         let activeSellerFilter = "ALL";
         let searchQuery = "";
-        let currentSellerId = null; // ID lapak yang sedang login di dashboard penjual
+        let currentSellerId = null;
         let isAdminAuthenticated = false;
+
+        // Penampung foto Base64 hasil kompresi sementara sebelum form disubmit
+        let tempRegPhotoDataUrl = "";
+        let tempModalPhotoDataUrl = "";
 
         // --- 3. INISIALISASI DATA ---
         function initApp() {
-            // Cek apakah ada data tertanam dari file HTML terupdate yang dibagikan Admin
             const baseSettings = (EMBEDDED_DATA && EMBEDDED_DATA.settings) ? EMBEDDED_DATA.settings : DEFAULT_SETTINGS;
             const baseSellers = (EMBEDDED_DATA && EMBEDDED_DATA.sellers) ? EMBEDDED_DATA.sellers : DEFAULT_SELLERS;
             const baseProducts = (EMBEDDED_DATA && EMBEDDED_DATA.products) ? EMBEDDED_DATA.products : DEFAULT_PRODUCTS;
 
-            const savedSettings = localStorage.getItem('pasarDesaMulti_settings');
-            const savedSellers = localStorage.getItem('pasarDesaMulti_sellers');
-            const savedProducts = localStorage.getItem('pasarDesaMulti_products');
-            const savedCart = localStorage.getItem('pasarDesaMulti_cart');
+            const savedSettings = localStorage.getItem('pasarBoawae_settings');
+            const savedSellers = localStorage.getItem('pasarBoawae_sellers');
+            const savedProducts = localStorage.getItem('pasarBoawae_products');
+            const savedCart = localStorage.getItem('pasarBoawae_cart');
 
             storeSettings = savedSettings ? JSON.parse(savedSettings) : { ...baseSettings };
             sellers = savedSellers ? JSON.parse(savedSellers) : [...baseSellers];
             products = savedProducts ? JSON.parse(savedProducts) : [...baseProducts];
             cart = savedCart ? JSON.parse(savedCart) : [];
 
-            // Muat identitas pembeli terakhir
-            const savedBuyer = localStorage.getItem('pasarDesaMulti_buyer');
+            const savedBuyer = localStorage.getItem('pasarBoawae_buyer');
             if (savedBuyer) {
                 const b = JSON.parse(savedBuyer);
                 document.getElementById('buyer-name').value = b.name || "";
@@ -926,7 +1014,6 @@
             updateCartUI();
             lucide.createIcons();
 
-            // Tutup dropdown jika klik di luar
             document.addEventListener('click', (e) => {
                 const dropdown = document.getElementById('nav-dropdown');
                 const btnMenu = document.getElementById('btn-nav-menu');
@@ -937,13 +1024,88 @@
         }
 
         function saveToStorage() {
-            localStorage.setItem('pasarDesaMulti_settings', JSON.stringify(storeSettings));
-            localStorage.setItem('pasarDesaMulti_sellers', JSON.stringify(sellers));
-            localStorage.setItem('pasarDesaMulti_products', JSON.stringify(products));
-            localStorage.setItem('pasarDesaMulti_cart', JSON.stringify(cart));
+            try {
+                localStorage.setItem('pasarBoawae_settings', JSON.stringify(storeSettings));
+                localStorage.setItem('pasarBoawae_sellers', JSON.stringify(sellers));
+                localStorage.setItem('pasarBoawae_products', JSON.stringify(products));
+                localStorage.setItem('pasarBoawae_cart', JSON.stringify(cart));
+            } catch (err) {
+                showToast("⚠️ Memori browser penuh! Gunakan foto lebih kecil atau ekspor cadangan.");
+            }
         }
 
-        // --- 4. HELPER & NAVIGASI DROPDOWN ---
+        // --- 4. KOMPRESI & UPLOAD FOTO PRODUK DARI HP ---
+        function handlePhotoUpload(event, context) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            if (!file.type.startsWith('image/')) {
+                showToast("⚠️ Pilih file gambar/foto yang valid");
+                return;
+            }
+
+            showToast("Memproses & mengompresi foto...");
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    // Kompresi gambar ke lebar maksimal 600px agar ringan di HP Android
+                    const maxDim = 600;
+                    let width = img.width;
+                    let height = img.height;
+
+                    if (width > height) {
+                        if (width > maxDim) {
+                            height = Math.round((height * maxDim) / width);
+                            width = maxDim;
+                        }
+                    } else {
+                        if (height > maxDim) {
+                            width = Math.round((width * maxDim) / height);
+                            height = maxDim;
+                        }
+                    }
+
+                    const canvas = document.createElement('canvas');
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+
+                    // Simpan dalam format JPEG kualitas 0.72 (~35-65 KB per foto)
+                    const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.72);
+
+                    if (context === 'reg') {
+                        tempRegPhotoDataUrl = compressedDataUrl;
+                        document.getElementById('reg-photo-preview-img').src = compressedDataUrl;
+                        document.getElementById('reg-photo-preview-box').classList.remove('hidden');
+                    } else {
+                        tempModalPhotoDataUrl = compressedDataUrl;
+                        document.getElementById('modal-photo-preview-img').src = compressedDataUrl;
+                        document.getElementById('modal-photo-preview-box').classList.remove('hidden');
+                    }
+                    showToast("✅ Foto produk siap dipasang!");
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function clearUploadedPhoto(context) {
+            if (context === 'reg') {
+                tempRegPhotoDataUrl = "";
+                document.getElementById('reg-photo-input').value = "";
+                document.getElementById('reg-photo-preview-img').src = "";
+                document.getElementById('reg-photo-preview-box').classList.add('hidden');
+            } else {
+                tempModalPhotoDataUrl = "";
+                document.getElementById('modal-photo-input').value = "";
+                document.getElementById('modal-photo-preview-img').src = "";
+                document.getElementById('modal-photo-preview-box').classList.add('hidden');
+            }
+        }
+
+        // --- 5. HELPER & NAVIGASI ---
         function formatRupiah(num) {
             return 'Rp ' + Number(num).toLocaleString('id-ID');
         }
@@ -971,16 +1133,12 @@
 
         function navigateFromMenu(target) {
             document.getElementById('nav-dropdown').classList.add('hidden');
-            if (target === 'admin') {
-                openAdminAccess();
-            } else {
-                switchView(target);
-            }
+            if (target === 'admin') openAdminAccess();
+            else switchView(target);
         }
 
         function switchView(viewName) {
-            const views = ['home', 'seller', 'admin'];
-            views.forEach(v => {
+            ['home', 'seller', 'admin'].forEach(v => {
                 const el = document.getElementById(`view-${v}`);
                 if (v === viewName) el.classList.remove('hidden');
                 else el.classList.add('hidden');
@@ -997,11 +1155,8 @@
                 document.getElementById('floating-cart-bar').classList.add('translate-y-32');
             }
 
-            if (viewName === 'seller') {
-                renderSellerPortal();
-            } else if (viewName === 'admin') {
-                loadAdminData();
-            }
+            if (viewName === 'seller') renderSellerPortal();
+            else if (viewName === 'admin') loadAdminData();
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
             lucide.createIcons();
@@ -1012,7 +1167,7 @@
             document.getElementById('header-store-tagline').textContent = storeSettings.storeTagline;
         }
 
-        // --- 5. KATALOG UTAMA, PENCARIAN & FILTER ---
+        // --- 6. KATALOG UTAMA, PENCARIAN & FILTER ---
         function renderCategories() {
             const container = document.getElementById('category-filters');
             container.innerHTML = CATEGORIES.map(cat => {
@@ -1021,7 +1176,7 @@
                     <button onclick="selectCategory('${cat}')"
                         class="touch-target px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition ${
                             active
-                            ? 'bg-emerald-700 text-white shadow-xs'
+                            ? 'bg-emerald-800 text-white shadow-xs'
                             : 'bg-white text-slate-700 border border-slate-200/80 hover:bg-emerald-50'
                         }">
                         ${cat}
@@ -1085,7 +1240,6 @@
             const grid = document.getElementById('product-grid');
             const emptyState = document.getElementById('empty-state');
 
-            // Hanya tampilkan produk dari lapak yang berstatus 'active'
             const filtered = products.filter(p => {
                 const seller = sellers.find(s => s.id === p.sellerId);
                 if (!seller || seller.status !== 'active') return false;
@@ -1111,10 +1265,10 @@
 
             emptyState.classList.add('hidden');
             grid.innerHTML = filtered.map(p => {
-                const seller = sellers.find(s => s.id === p.sellerId) || { shopName: "Warga Desa", location: "Desa" };
+                const seller = sellers.find(s => s.id === p.sellerId) || { shopName: "Warga Boawae", location: "Boawae" };
                 const isOutOfStock = p.stock === "Habis";
                 const stockBadge = p.stock === "Tersedia"
-                    ? "bg-emerald-600/90 text-white"
+                    ? "bg-emerald-600/95 text-white"
                     : p.stock === "Terbatas"
                         ? "bg-amber-500 text-slate-950"
                         : "bg-rose-600 text-white";
@@ -1122,20 +1276,20 @@
                 const inCart = cart.find(c => c.productId === p.id);
 
                 const mediaHtml = p.image
-                    ? `<img src="${p.image}" alt="${p.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-28 object-cover rounded-xl">
-                       <div style="display:none" class="w-full h-28 bg-gradient-to-br from-emerald-50 to-amber-50 rounded-xl items-center justify-center text-4xl">${p.icon || '📦'}</div>`
-                    : `<div class="w-full h-28 bg-gradient-to-br from-emerald-50 via-teal-50 to-amber-50/70 rounded-xl flex items-center justify-center text-4xl">${p.icon || '📦'}</div>`;
+                    ? `<img src="${p.image}" alt="${p.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-32 object-cover rounded-xl">
+                       <div style="display:none" class="w-full h-32 bg-gradient-to-br from-emerald-50 to-amber-50 rounded-xl items-center justify-center text-4xl">${p.icon || '📦'}</div>`
+                    : `<div class="w-full h-32 bg-gradient-to-br from-emerald-50 via-teal-50 to-amber-50/70 rounded-xl flex items-center justify-center text-4xl">${p.icon || '📦'}</div>`;
 
                 return `
                     <div class="bg-white rounded-2xl p-2.5 shadow-xs border border-slate-200/80 flex flex-col justify-between transition hover:shadow-md">
                         <div>
-                            <!-- Area Gambar & Tombol Info Detail -->
+                            <!-- Foto / Ikon Produk -->
                             <div class="relative mb-2 cursor-pointer" onclick="openProductDetail(${p.id})">
                                 ${mediaHtml}
                                 <span class="absolute top-1.5 left-1.5 px-2 py-0.5 rounded-md text-[10px] font-bold ${stockBadge} shadow-2xs">
                                     ${p.stock}
                                 </span>
-                                <button type="button" onclick="event.stopPropagation(); openProductDetail(${p.id})" title="Info Detail"
+                                <button type="button" onclick="event.stopPropagation(); openProductDetail(${p.id})" title="Detail Produk"
                                     class="absolute top-1.5 right-1.5 w-7 h-7 bg-white/90 hover:bg-white text-slate-700 rounded-full shadow flex items-center justify-center">
                                     <i data-lucide="info" class="w-3.5 h-3.5"></i>
                                 </button>
@@ -1151,7 +1305,7 @@
                                 ${p.name}
                             </h3>
 
-                            <!-- Info Lapak Penjual & Lokasi RT/RW -->
+                            <!-- Info Lapak Penjual -->
                             <div class="bg-slate-50 rounded-lg p-1.5 mb-2 border border-slate-100">
                                 <p class="text-[11px] font-bold text-emerald-800 truncate flex items-center space-x-1">
                                     <span>🏪</span>
@@ -1168,7 +1322,7 @@
                                 <span class="text-[11px] text-slate-500 font-medium">${p.unit}</span>
                             </div>
 
-                            <!-- Tombol Keranjang (+ / -) Ramah Sentuh -->
+                            <!-- Tombol Keranjang -->
                             ${isOutOfStock ? `
                                 <button disabled class="w-full touch-target py-2 bg-slate-200 text-slate-400 rounded-xl text-xs font-bold cursor-not-allowed">
                                     Stok Habis
@@ -1193,22 +1347,21 @@
             lucide.createIcons();
         }
 
-        // --- 6. MODAL DETAIL PRODUK ---
+        // --- 7. MODAL DETAIL PRODUK ---
         function openProductDetail(productId) {
             const p = products.find(item => item.id === productId);
             if (!p) return;
-            const seller = sellers.find(s => s.id === p.sellerId) || { shopName: "Warga Desa", location: "-" };
+            const seller = sellers.find(s => s.id === p.sellerId) || { shopName: "Warga Boawae", location: "Boawae" };
 
             document.getElementById('detail-category-badge').textContent = p.category;
             document.getElementById('detail-prod-name').textContent = p.name;
             document.getElementById('detail-prod-price').textContent = formatRupiah(p.price);
             document.getElementById('detail-prod-unit').textContent = p.unit;
-            document.getElementById('detail-prod-desc').textContent = p.desc || "Produk unggulan warga desa yang diproduksi dengan kualitas terbaik.";
+            document.getElementById('detail-prod-desc').textContent = p.desc || "Produk unggulan warga Boawae, pembayaran tunai saat barang diterima.";
             document.getElementById('detail-seller-name').textContent = `${seller.shopName} (${seller.ownerName || ''})`;
             document.getElementById('detail-seller-loc').textContent = `📍 ${seller.location}`;
 
-            const filterBtn = document.getElementById('detail-filter-seller-btn');
-            filterBtn.onclick = () => filterBySpecificSeller(seller.id);
+            document.getElementById('detail-filter-seller-btn').onclick = () => filterBySpecificSeller(seller.id);
 
             const mediaBox = document.getElementById('detail-media-box');
             if (p.image) {
@@ -1237,7 +1390,7 @@
             document.getElementById('product-detail-modal').classList.add('hidden');
         }
 
-        // --- 7. KERANJANG MULTI-PENJUAL & CHECKOUT WHATSAPP ---
+        // --- 8. KERANJANG MULTI-PENJUAL & CHECKOUT WHATSAPP (TUNAI / CASH) ---
         function addToCart(productId) {
             const p = products.find(item => item.id === productId);
             if (!p || p.stock === "Habis") return;
@@ -1279,7 +1432,6 @@
         }
 
         function updateCartUI() {
-            // Validasi item keranjang masih tersedia & lapak aktif
             cart = cart.filter(c => {
                 const p = products.find(prod => prod.id === c.productId);
                 if (!p) return false;
@@ -1327,7 +1479,6 @@
                 return;
             }
 
-            // Kelompokkan item keranjang berdasarkan sellerId
             const grouped = {};
             cart.forEach(item => {
                 const p = products.find(prod => prod.id === item.productId);
@@ -1344,12 +1495,16 @@
                 const itemsHtml = items.map(({ product, qty }) => {
                     const sub = product.price * qty;
                     sellerSubtotal += sub;
+                    const thumbHtml = product.image
+                        ? `<img src="${product.image}" alt="${product.name}" class="w-11 h-11 rounded-xl object-cover border border-slate-200 shrink-0">`
+                        : `<div class="w-11 h-11 rounded-xl bg-emerald-50 flex items-center justify-center text-xl shrink-0">${product.icon || '📦'}</div>`;
+
                     return `
-                        <div class="flex items-center justify-between py-2 border-b border-slate-100 last:border-none">
-                            <div class="flex items-center space-x-2.5 pr-2">
-                                <span class="text-xl">${product.icon || '📦'}</span>
-                                <div>
-                                    <p class="font-bold text-xs text-slate-800">${product.name}</p>
+                        <div class="flex items-center justify-between py-2.5 border-b border-slate-100 last:border-none">
+                            <div class="flex items-center space-x-2.5 pr-2 min-w-0">
+                                ${thumbHtml}
+                                <div class="min-w-0">
+                                    <p class="font-bold text-xs text-slate-800 truncate">${product.name}</p>
                                     <p class="text-[11px] text-slate-500">${formatRupiah(product.price)} ${product.unit}</p>
                                     <p class="text-xs font-extrabold text-emerald-700">${formatRupiah(sub)}</p>
                                 </div>
@@ -1365,7 +1520,6 @@
 
                 return `
                     <div class="bg-white rounded-2xl border-2 border-emerald-600/20 shadow-xs overflow-hidden">
-                        <!-- Header Lapak Penjual -->
                         <div class="bg-emerald-50 px-4 py-2.5 border-b border-emerald-100 flex items-center justify-between">
                             <div>
                                 <p class="font-extrabold text-xs text-emerald-900 flex items-center space-x-1">
@@ -1379,22 +1533,20 @@
                             </span>
                         </div>
 
-                        <!-- Daftar Barang Penjual Ini -->
                         <div class="px-4 py-1">
                             ${itemsHtml}
                         </div>
 
-                        <!-- Pilihan Metode Pengambilan & Catatan Khusus Penjual Ini -->
                         <div class="px-4 py-3 bg-slate-50/80 border-t border-slate-100 space-y-2.5">
                             <div class="grid grid-cols-2 gap-2">
                                 <label class="cursor-pointer">
-                                    <input type="radio" name="delivery_${sellerId}" value="Antar ke Rumah" checked class="peer hidden">
+                                    <input type="radio" name="delivery_${sellerId}" value="Antar ke Alamat (Bayar Tunai)" checked class="peer hidden">
                                     <div class="py-2 px-2 rounded-xl border border-slate-200 bg-white peer-checked:border-emerald-600 peer-checked:bg-emerald-50 text-center text-[11px] font-bold text-slate-700 peer-checked:text-emerald-800">
                                         🛵 Antar ke Rumah
                                     </div>
                                 </label>
                                 <label class="cursor-pointer">
-                                    <input type="radio" name="delivery_${sellerId}" value="Ambil di Lapak" class="peer hidden">
+                                    <input type="radio" name="delivery_${sellerId}" value="Ambil di Lapak (Bayar Tunai)" class="peer hidden">
                                     <div class="py-2 px-2 rounded-xl border border-slate-200 bg-white peer-checked:border-emerald-600 peer-checked:bg-emerald-50 text-center text-[11px] font-bold text-slate-700 peer-checked:text-emerald-800">
                                         🏪 Ambil di Lapak
                                     </div>
@@ -1407,7 +1559,7 @@
                             <button onclick="sendWhatsAppToSeller('${sellerId}')"
                                 class="w-full touch-target py-3 bg-green-600 hover:bg-green-700 active:scale-[0.99] text-white font-extrabold text-xs rounded-xl shadow flex items-center justify-center space-x-2 transition">
                                 <i data-lucide="send" class="w-4 h-4"></i>
-                                <span>Kirim Pesanan ke WA ${seller.shopName}</span>
+                                <span>Kirim Pesanan WA (${seller.shopName})</span>
                             </button>
                         </div>
                     </div>
@@ -1422,24 +1574,23 @@
             const buyerAddress = document.getElementById('buyer-address').value.trim();
 
             if (!buyerName) {
-                showToast("⚠️ Isi Nama Anda terlebih dahulu di bagian atas");
+                showToast("⚠️ Isi Nama Anda terlebih dahulu");
                 document.getElementById('buyer-name').focus();
                 return;
             }
             if (!buyerAddress) {
-                showToast("⚠️ Isi Alamat / RT-RW Anda terlebih dahulu");
+                showToast("⚠️ Isi Alamat Anda terlebih dahulu");
                 document.getElementById('buyer-address').focus();
                 return;
             }
 
-            // Simpan profil pembeli untuk kemudahan berikutnya
-            localStorage.setItem('pasarDesaMulti_buyer', JSON.stringify({ name: buyerName, address: buyerAddress }));
+            localStorage.setItem('pasarBoawae_buyer', JSON.stringify({ name: buyerName, address: buyerAddress }));
 
             const seller = sellers.find(s => s.id === sellerId);
             if (!seller) return;
 
             const deliveryRadio = document.querySelector(`input[name="delivery_${sellerId}"]:checked`);
-            const deliveryMethod = deliveryRadio ? deliveryRadio.value : "Antar ke Rumah";
+            const deliveryMethod = deliveryRadio ? deliveryRadio.value : "Antar ke Alamat (Bayar Tunai)";
             const note = document.getElementById(`note_${sellerId}`).value.trim();
 
             const sellerItems = cart
@@ -1460,20 +1611,21 @@
             waText += `Saya melihat lapak Anda di *${storeSettings.storeName}* dan ingin memesan:\n\n`;
             waText += `*DAFTAR PESANAN:*\n`;
             waText += `${itemLines}\n`;
-            waText += `💰 *TOTAL: ${formatRupiah(total)}*\n`;
+            waText += `💰 *TOTAL BAYAR: ${formatRupiah(total)}*\n`;
+            waText += `💵 *Pembayaran: Tunai / Uang Cash*\n`;
             waText += `----------------------------------\n`;
             waText += `👤 *Nama Pembeli:* ${buyerName}\n`;
             waText += `🚚 *Pengambilan:* ${deliveryMethod}\n`;
             waText += `📍 *Alamat:* ${buyerAddress}\n`;
             if (note) waText += `📝 *Catatan:* ${note}\n`;
-            waText += `\nMohon konfirmasi ketersediaannya ya. Terima kasih! 🙏`;
+            waText += `\nMohon konfirmasi pesanannya ya. Terima kasih! 🙏`;
 
             const targetPhone = formatWaNumber(seller.waNumber);
             const url = `https://wa.me/${targetPhone}?text=${encodeURIComponent(waText)}`;
             window.open(url, '_blank');
         }
 
-        // --- 8. PORTAL WARGA BUKA LAPAK / KELOLA LAPAK SAYA ---
+        // --- 9. PORTAL WARGA BUKA LAPAK & KELOLA LAPAK SAYA ---
         function switchSellerPortalTab(tab) {
             const loginPanel = document.getElementById('portal-panel-login');
             const regPanel = document.getElementById('portal-panel-register');
@@ -1548,8 +1700,9 @@
                 return;
             }
 
+            const newSellerId = "lapak_" + Date.now();
             const newSeller = {
-                id: "lapak_" + Date.now(),
+                id: newSellerId,
                 shopName,
                 ownerName,
                 waNumber: formatWaNumber(waRaw),
@@ -1559,13 +1712,35 @@
             };
 
             sellers.push(newSeller);
+
+            // Cek apakah penjual langsung mengisi produk pertama beserta foto
+            const firstProdName = document.getElementById('reg-first-prod-name').value.trim();
+            const firstProdPrice = Number(document.getElementById('reg-first-prod-price').value);
+            if (firstProdName && firstProdPrice > 0) {
+                const unitRaw = document.getElementById('reg-first-prod-unit').value.trim() || "/pcs";
+                const unitFormatted = unitRaw.startsWith('/') ? unitRaw : `/${unitRaw}`;
+
+                products.unshift({
+                    id: Date.now() + 1,
+                    sellerId: newSellerId,
+                    name: firstProdName,
+                    category: document.getElementById('reg-first-prod-cat').value,
+                    icon: document.getElementById('reg-first-prod-icon').value.trim() || '📦',
+                    price: firstProdPrice,
+                    unit: unitFormatted,
+                    stock: "Tersedia",
+                    desc: `Produk segar dari ${shopName}`,
+                    image: tempRegPhotoDataUrl || ""
+                });
+            }
+
             saveToStorage();
             e.target.reset();
+            clearUploadedPhoto('reg');
 
-            // Langsung masuk ke dashboard lapak barunya
-            currentSellerId = newSeller.id;
+            currentSellerId = newSellerId;
             renderSellerPortal();
-            showToast(`🎉 Lapak "${shopName}" berhasil didaftarkan!`);
+            showToast(`🎉 Lapak "${shopName}" berhasil dibuka!`);
         }
 
         function logoutSeller() {
@@ -1598,44 +1773,48 @@
             if (myProducts.length === 0) {
                 listEl.innerHTML = `
                     <div class="bg-white p-6 rounded-2xl border border-dashed border-slate-300 text-center">
-                        <p class="text-2xl mb-2">📦</p>
-                        <p class="text-xs font-bold text-slate-700 mb-1">Belum ada barang di lapak Anda</p>
-                        <p class="text-[11px] text-slate-500 mb-3">Klik tombol "+ Tambah Produk" di atas untuk mulai memajang dagangan.</p>
+                        <p class="text-2xl mb-2">📸</p>
+                        <p class="text-xs font-bold text-slate-700 mb-1">Belum ada produk di lapak Anda</p>
+                        <p class="text-[11px] text-slate-500 mb-3">Klik tombol "+ Tambah Produk" untuk mengunggah foto & memasang dagangan.</p>
                     </div>
                 `;
                 return;
             }
 
-            listEl.innerHTML = myProducts.map(p => `
-                <div class="bg-white p-3 rounded-2xl border border-slate-200/80 shadow-2xs flex items-center justify-between">
-                    <div class="flex items-center space-x-3 pr-2 min-w-0">
-                        <div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-2xl shrink-0">
-                            ${p.icon || '📦'}
-                        </div>
-                        <div class="min-w-0">
-                            <div class="flex items-center space-x-1.5">
-                                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-amber-100 text-amber-900">${p.category}</span>
-                                <button onclick="toggleProductStock(${p.id})" class="text-[10px] font-bold px-2 py-0.5 rounded ${p.stock === 'Habis' ? 'bg-rose-100 text-rose-700' : 'bg-emerald-100 text-emerald-800'}">
-                                    ${p.stock} ↻
-                                </button>
+            listEl.innerHTML = myProducts.map(p => {
+                const thumbHtml = p.image
+                    ? `<img src="${p.image}" alt="${p.name}" class="w-14 h-14 rounded-xl object-cover border border-slate-200 shrink-0">`
+                    : `<div class="w-14 h-14 rounded-xl bg-emerald-50 flex items-center justify-center text-2xl shrink-0">${p.icon || '📦'}</div>`;
+
+                return `
+                    <div class="bg-white p-3 rounded-2xl border border-slate-200/80 shadow-2xs flex items-center justify-between">
+                        <div class="flex items-center space-x-3 pr-2 min-w-0">
+                            ${thumbHtml}
+                            <div class="min-w-0">
+                                <div class="flex items-center space-x-1.5">
+                                    <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-amber-100 text-amber-900">${p.category}</span>
+                                    <button onclick="toggleProductStock(${p.id})" class="text-[10px] font-bold px-2 py-0.5 rounded ${p.stock === 'Habis' ? 'bg-rose-100 text-rose-700' : 'bg-emerald-100 text-emerald-800'}">
+                                        ${p.stock} ↻
+                                    </button>
+                                </div>
+                                <h4 class="font-bold text-xs text-slate-800 truncate mt-1">${p.name}</h4>
+                                <p class="text-xs font-extrabold text-emerald-700">${formatRupiah(p.price)} <span class="text-slate-400 font-normal">${p.unit}</span></p>
                             </div>
-                            <h4 class="font-bold text-xs text-slate-800 truncate mt-1">${p.name}</h4>
-                            <p class="text-xs font-extrabold text-emerald-700">${formatRupiah(p.price)} <span class="text-slate-400 font-normal">${p.unit}</span></p>
+                        </div>
+                        <div class="flex items-center space-x-1.5 shrink-0">
+                            <button onclick="openProductDetail(${p.id})" class="w-9 h-9 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center" title="Pratinjau">
+                                <i data-lucide="eye" class="w-4 h-4"></i>
+                            </button>
+                            <button onclick="openProductModal(${p.id}, '${seller.id}')" class="w-9 h-9 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center" title="Edit">
+                                <i data-lucide="edit-3" class="w-4 h-4"></i>
+                            </button>
+                            <button onclick="deleteProduct(${p.id}, true)" class="w-9 h-9 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center" title="Hapus">
+                                <i data-lucide="trash-2" class="w-4 h-4"></i>
+                            </button>
                         </div>
                     </div>
-                    <div class="flex items-center space-x-1.5 shrink-0">
-                        <button onclick="openProductDetail(${p.id})" class="w-9 h-9 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center" title="Pratinjau">
-                            <i data-lucide="eye" class="w-4 h-4"></i>
-                        </button>
-                        <button onclick="openProductModal(${p.id}, '${seller.id}')" class="w-9 h-9 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center" title="Edit">
-                            <i data-lucide="edit-3" class="w-4 h-4"></i>
-                        </button>
-                        <button onclick="deleteProduct(${p.id}, true)" class="w-9 h-9 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center" title="Hapus">
-                            <i data-lucide="trash-2" class="w-4 h-4"></i>
-                        </button>
-                    </div>
-                </div>
-            `).join('');
+                `;
+            }).join('');
 
             lucide.createIcons();
         }
@@ -1686,7 +1865,7 @@
             if (!seller) return;
             const myProducts = products.filter(p => p.sellerId === seller.id);
             const payload = {
-                type: "PASAR_DESA_LAPAK_EXPORT",
+                type: "PASAR_BOAWAE_LAPAK_EXPORT",
                 exportedAt: new Date().toISOString(),
                 seller: seller,
                 products: myProducts
@@ -1694,17 +1873,16 @@
             const safeName = seller.shopName.toLowerCase().replace(/[^a-z0-9]/g, '_');
             const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
             downloadBlob(blob, `lapak_${safeName}.json`);
-            showToast("File data lapak diunduh! Silakan kirim ke Admin Desa.");
+            showToast("File data lapak diunduh! Kirim ke Admin Boawae.");
         }
 
-        // --- 9. TAMBAH / EDIT / HAPUS PRODUK (PENJUAL & ADMIN) ---
+        // --- 10. TAMBAH / EDIT / HAPUS PRODUK + FOTO ---
         function openProductModal(productId = null, fixedSellerId = '') {
             const modal = document.getElementById('product-form-modal');
             const title = document.getElementById('product-modal-title');
             const sellerSelectGroup = document.getElementById('prod-seller-select-group');
             const sellerSelect = document.getElementById('prod-seller-id');
 
-            // Isi pilihan lapak untuk mode Admin
             sellerSelect.innerHTML = sellers.map(s => `<option value="${s.id}">${s.shopName} (${s.ownerName})</option>`).join('');
 
             if (fixedSellerId) {
@@ -1713,6 +1891,8 @@
             } else {
                 sellerSelectGroup.classList.remove('hidden');
             }
+
+            clearUploadedPhoto('modal');
 
             if (productId) {
                 const p = products.find(item => item.id === productId);
@@ -1727,7 +1907,12 @@
                 document.getElementById('prod-unit').value = p.unit;
                 document.getElementById('prod-stock').value = p.stock;
                 document.getElementById('prod-desc').value = p.desc || '';
-                document.getElementById('prod-image').value = p.image || '';
+
+                if (p.image) {
+                    tempModalPhotoDataUrl = p.image;
+                    document.getElementById('modal-photo-preview-img').src = p.image;
+                    document.getElementById('modal-photo-preview-box').classList.remove('hidden');
+                }
             } else {
                 title.textContent = "Tambah Produk Baru";
                 document.getElementById('product-form').reset();
@@ -1737,6 +1922,7 @@
             }
 
             modal.classList.remove('hidden');
+            lucide.createIcons();
         }
 
         function closeProductModal() {
@@ -1765,13 +1951,13 @@
                 unit: unitFormatted,
                 stock: document.getElementById('prod-stock').value,
                 desc: document.getElementById('prod-desc').value.trim(),
-                image: document.getElementById('prod-image').value.trim()
+                image: tempModalPhotoDataUrl || ""
             };
 
             if (idVal) {
                 const idx = products.findIndex(p => p.id === Number(idVal));
                 if (idx !== -1) products[idx] = prodData;
-                showToast("Produk berhasil diperbarui");
+                showToast("Produk & foto berhasil diperbarui");
             } else {
                 products.unshift(prodData);
                 showToast("Produk baru ditambahkan ke lapak");
@@ -1799,7 +1985,7 @@
             });
         }
 
-        // --- 10. PANEL PENGATURAN ADMIN DESA ---
+        // --- 11. PANEL PENGATURAN ADMIN ---
         function openAdminAccess() {
             if (isAdminAuthenticated) {
                 switchView('admin');
@@ -1821,7 +2007,7 @@
                 isAdminAuthenticated = true;
                 closePinModal();
                 switchView('admin');
-                showToast("Masuk sebagai Admin Pasar Desa");
+                showToast("Masuk sebagai Admin Pasar Boawae");
             } else {
                 document.getElementById('pin-error-msg').classList.remove('hidden');
             }
@@ -1883,14 +2069,18 @@
                 `;
             }).join('');
 
-            // 2. Render Seluruh Produk Warga
+            // 2. Render Semua Produk
             const prodListEl = document.getElementById('admin-all-product-list');
             prodListEl.innerHTML = products.map(p => {
                 const seller = sellers.find(s => s.id === p.sellerId);
+                const thumbHtml = p.image
+                    ? `<img src="${p.image}" alt="${p.name}" class="w-10 h-10 rounded-lg object-cover border border-slate-200 shrink-0">`
+                    : `<span class="text-2xl shrink-0 w-10 text-center">${p.icon || '📦'}</span>`;
+
                 return `
                     <div class="p-2.5 rounded-xl border border-slate-200 flex items-center justify-between">
                         <div class="flex items-center space-x-2.5 pr-2 min-w-0">
-                            <span class="text-2xl shrink-0">${p.icon || '📦'}</span>
+                            ${thumbHtml}
                             <div class="min-w-0">
                                 <p class="text-[10px] font-bold text-emerald-700 truncate">🏪 ${seller ? seller.shopName : 'Tanpa Lapak'}</p>
                                 <h4 class="font-bold text-xs text-slate-800 truncate">${p.name}</h4>
@@ -1939,20 +2129,20 @@
             const pin = document.getElementById('setting-admin-pin').value.trim();
 
             if (!name) {
-                showToast("⚠️ Nama Pasar Desa wajib diisi");
+                showToast("⚠️ Nama Pasar Online wajib diisi");
                 return;
             }
             storeSettings.storeName = name;
-            storeSettings.storeTagline = tagline || "Lapak Bersama Warga Desa";
+            storeSettings.storeTagline = tagline || "Belanja & Jualan Warga • Bayar Tunai / Cash";
             storeSettings.adminWa = formatWaNumber(wa);
             if (pin.length >= 4) storeSettings.adminPin = pin;
 
             saveToStorage();
             updateHeaderUI();
-            showToast("Pengaturan Pasar Desa berhasil disimpan");
+            showToast("Pengaturan berhasil disimpan");
         }
 
-        // --- 11. GABUNG DATA WARGA & UNDUH HTML TERUPDATE ---
+        // --- 12. GABUNG DATA WARGA (JSON/CSV) & UNDUH HTML TERUPDATE ---
         function adminMergeImport(event) {
             const file = event.target.files[0];
             if (!file) return;
@@ -1966,7 +2156,6 @@
                         let addedSellers = 0;
                         let addedProducts = 0;
 
-                        // Kasus 1: File ekspor dari 1 lapak warga
                         if (data.seller && Array.isArray(data.products)) {
                             const existingSellerIdx = sellers.findIndex(s => s.id === data.seller.id);
                             if (existingSellerIdx !== -1) sellers[existingSellerIdx] = data.seller;
@@ -1977,9 +2166,7 @@
                                 if (pIdx !== -1) products[pIdx] = np;
                                 else { products.unshift(np); addedProducts++; }
                             });
-                        }
-                        // Kasus 2: File backup database lengkap desa
-                        else if (Array.isArray(data.sellers) && Array.isArray(data.products)) {
+                        } else if (Array.isArray(data.sellers) && Array.isArray(data.products)) {
                             data.sellers.forEach(ns => {
                                 const sIdx = sellers.findIndex(s => s.id === ns.id);
                                 if (sIdx !== -1) sellers[sIdx] = ns;
@@ -2035,7 +2222,7 @@
 
         function exportFullDatabase() {
             const payload = {
-                type: "PASAR_DESA_FULL_BACKUP",
+                type: "PASAR_BOAWAE_FULL_BACKUP",
                 exportedAt: new Date().toISOString(),
                 settings: storeSettings,
                 sellers: sellers,
@@ -2043,22 +2230,22 @@
             };
             const dateStr = new Date().toISOString().slice(0, 10);
             const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
-            downloadBlob(blob, `database_pasar_desa_${dateStr}.json`);
+            downloadBlob(blob, `database_pasar_boawae_${dateStr}.json`);
             showToast("Backup database lengkap diunduh");
         }
 
         function downloadCSVTemplate() {
-            const defaultSellerId = sellers[0] ? sellers[0].id : "lapak_bu_ani";
+            const defaultSellerId = sellers[0] ? sellers[0].id : "lapak_mama_maria";
             const csv = "\uFEFF" + [
                 "sellerId,name,category,price,unit,stock,icon,desc",
-                `"${defaultSellerId}","Gula Aren Asli Desa","Sembako",22000,"/kg","Tersedia","🍯","Gula aren murni cetakan batok kelapa"`
+                `"${defaultSellerId}","Pisang Kepok Matang","Hasil Tani",15000,"/sisir","Tersedia","🍌","Pisang kepok manis langsung dari kebun"`
             ].join("\n");
             const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
-            downloadBlob(blob, "templat_produk_pasar_desa.csv");
-            showToast("Templat CSV (Excel) diunduh");
+            downloadBlob(blob, "templat_produk_boawae.csv");
+            showToast("Templat CSV diunduh");
         }
 
-        // Fitur Unggulan Admin: Unduh File HTML Tunggal yang sudah tertanam data terbaru
+        // Unduh File HTML Tunggal yang sudah memuat seluruh data terbaru
         function downloadUpdatedHTML() {
             const embeddedPayload = JSON.stringify({
                 settings: storeSettings,
@@ -2066,7 +2253,6 @@
                 products: products
             });
 
-            // Ambil kode sumber halaman saat ini dan tanamkan data terbaru ke EMBEDDED_DATA
             let fullHtml = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
             fullHtml = fullHtml.replace(
                 /const EMBEDDED_DATA = [\s\S]*?;/,
@@ -2075,8 +2261,8 @@
 
             const dateStr = new Date().toISOString().slice(0, 10);
             const blob = new Blob([fullHtml], { type: "text/html;charset=utf-8" });
-            downloadBlob(blob, `Pasar_Desa_Online_${dateStr}.html`);
-            showToast("File HTML terupdate siap dibagikan ke Grup WA Desa!");
+            downloadBlob(blob, `Pasar_Online_Boawae_${dateStr}.html`);
+            showToast("File HTML terupdate siap dibagikan / diunggah ke GitHub!");
         }
 
         function downloadBlob(blob, filename) {
@@ -2091,7 +2277,7 @@
         }
 
         function confirmResetDefault() {
-            openConfirm("Reset Data Awal?", "Semua lapak & produk akan dikembalikan ke contoh awal bawaan desa.", () => {
+            openConfirm("Reset Data Awal?", "Semua lapak & produk akan dikembalikan ke contoh awal bawaan PASAR ONLINE BOAWAE.", () => {
                 storeSettings = { ...DEFAULT_SETTINGS };
                 sellers = [...DEFAULT_SELLERS];
                 products = [...DEFAULT_PRODUCTS];
@@ -2103,7 +2289,7 @@
             });
         }
 
-        // --- 12. DIALOG KONFIRMASI ---
+        // --- 13. DIALOG KONFIRMASI ---
         let _confirmAction = null;
         function openConfirm(title, message, onYes) {
             document.getElementById('confirm-title').textContent = title;
@@ -2122,7 +2308,6 @@
             closeConfirmModal();
         });
 
-        // Jalankan aplikasi
         window.addEventListener('DOMContentLoaded', initApp);
     </script>
 </body>
